@@ -7,14 +7,35 @@ body {
 	width: 100vw;
 	height: 100vh;
 }
-
-.images {
+.slider-box {
+	display: flex;
+}
+.slider {
+	position: relative;
+	height: 400px;
+	width: 800px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	height: 100vw;
+	/* height: 100vw; */
 }
-
+.btn {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	padding: 0.2em;
+	border: none;
+	background-color: rgba(0, 0, 0, 0.5);
+	color: #fff;
+	font-size: 2rem;
+	cursor: pointer;
+}
+.btn-left {
+	left: 0;
+}
+.btn-right {
+	right: 0;
+}
 .image {
 	/* height: 400px; */
 	width: 500px;

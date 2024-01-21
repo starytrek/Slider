@@ -1,7 +1,7 @@
 const image = document.getElementById('image1')
 document.addEventListener('click', () => {
 	// console.log('image')
-	image.style.scale = '150%'
+	// image.style.scale = '110%'
 })
 
 // 1. funkcja zmniająca slajd i tekst 1/5

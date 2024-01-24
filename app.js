@@ -31,9 +31,7 @@ const changeSlide = direction => {
 	updateButtonAvailability()
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-	// Inny kod, jeśli istnieje
-})
+document.addEventListener('DOMContentLoaded', () => {})
 
 window.addEventListener('load', () => {
 	updateSlideInfo()

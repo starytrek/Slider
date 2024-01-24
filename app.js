@@ -1,7 +1,53 @@
-const image = document.getElementById('image1')
-document.addEventListener('click', () => {
-	// console.log('image')
-	// image.style.scale = '110%'
+const sliderBox = document.querySelector('.slider-box')
+const leftBtn = document.querySelector('.btn-left')
+const rightBtn = document.querySelector('.btn-right')
+const slideNumber = document.querySelector('.slide-info')
+const carouselWidth = 800
+let index = 0
+const totalImages = document.querySelectorAll('.image').length
+
+const updateSlideInfo = () => {
+	const slideInfo = document.querySelector('.slide-info')
+	if (slideInfo) {
+		slideInfo.textContent = `${index + 1}/${totalImages}`
+	}
+}
+
+const updateButtonAvailability = () => {
+	leftBtn.disabled = index === 0
+	rightBtn.disabled = index === totalImages - 1
+}
+
+const changeSlide = direction => {
+	index += direction
+	if (index < 0) {
+		index = 0
+	} else if (index >= totalImages) {
+		index = totalImages - 1
+	}
+	const translation = -index * carouselWidth
+	sliderBox.style.transform = `translateX(${translation}px)`
+	updateSlideInfo()
+	updateButtonAvailability()
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+	// Inny kod, jeśli istnieje
+})
+
+window.addEventListener('load', () => {
+	updateSlideInfo()
+})
+
+leftBtn.addEventListener('click', () => changeSlide(-1))
+rightBtn.addEventListener('click', () => changeSlide(1))
+
+document.addEventListener('keydown', event => {
+	if (event.key === 'ArrowLeft') {
+		changeSlide(-1)
+	} else if (event.key === 'ArrowRight') {
+		changeSlide(1)
+	}
 })
 
 // 1. funkcja zmniająca slajd i tekst 1/5

@@ -3,8 +3,8 @@ const leftBtn = document.querySelector('.btn-left')
 const rightBtn = document.querySelector('.btn-right')
 const slideNumber = document.querySelector('.slide-info')
 const carouselWidth = 800
-let index = 0
 const totalImages = document.querySelectorAll('.image').length
+let index = 0
 
 const updateSlideInfo = () => {
 	const slideInfo = document.querySelector('.slide-info')
